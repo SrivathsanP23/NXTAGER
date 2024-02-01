@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+        crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css">
+
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
+    <script src="script.js"></script>
+
+    <style>
+        
+
+        #back-to-top {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            display: none;
+            cursor: pointer;
+        }
+
+        #typewriter-container {
+            font-size: 24px;
+            font-weight: 900;
+            overflow: hidden;
+            white-space: nowrap;
+            animation: blink-caret 0.75s step-end infinite;
+            text-align: center;
+            position: relative;
+        }
+
+        .cont {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 300px;
+            background-color: aliceblue;
+            padding: 5px;
+            transition: all 1s;
+            position: relative;
+
+        }
+
+
+
+        .benef {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            background-color: #feffff;
+            color: black;
+            height: 300px;
+            margin-bottom: 10px;
+            margin-top: 10px;
+            gap: 10px;
+            box-shadow: 2px 2px 2px 2px #eee;
+        }
+
+        .cc {
+            overflow: hidden;
+
+            position: relative;
+            padding: 10px;
+
+        }
+
+
+
+        .promoter-details {
+            margin-top: 30px;
+        }
+
+        .promoter {
+            margin-bottom: 20px;
+        }
+
+        .card-img-top {
+            object-fit: cover;
+            max-height: 300px;
+        }
+
+
+        @keyframes blink-caret {
+
+            from,
+            to {
+                border-color: transparent;
+            }
+
+            50% {
+                border-color: #333;
+            }
+        }
+
+        .image-container {
+            text-align: center;
+        }
+
+        
+    </style>
+</head>
+
+<body>
+
+    <nav class="header">
+        <div class="logo">
+
+            <h1>NXT<span style="color: #00f6dc;">AGER</span><br>
+                <p style="font-size: smaller;">Data Driven Agriculture</p>
+            </h1>
+
+
+        </div>
+
+        <ul>
+            <li><a href="index.html">HOME</a></li>
+            <li><a href="project.html">DASHBOARD</a></li>
+        </ul>
+    </nav>
+
+
+    <section>
+
+        <div style="width: 100%;
+            align-items: center;
+            text-align: center;" id="typewriter-container">
+        </div><br>
+    </section>
+
+
+    <div class="image-container">
+        <img src="averagenutrient.png" height="350px" width="350px" alt=""><br><br>
+        
+        <img src="nitrogen.png" height="350px" width="550px" alt="">
+        
+        <img src="phosphorous.png" height="350px" width="550px" alt="">
+       
+        <img src="potassium.png" height="350px" width="550px" alt=""><br><br><br><br>
+        
+        <img src="ph.png" height="350px" width="550px" alt="">
+        
+        <img src="rainfall.png" height="350px" width="550px" alt=""><br><br><br>
+        
+        <img src="humidity and temperature.png" height="450px" width="600px"><br>
+       
+       
+
+        
+    </div>
+
+    <div id="back-to-top">
+        <i class="fas fa-arrow-up fa-2x"></i>
+    </div>
+
+    <footer>
+        <p>&copy; 2024 NXT<span style="color: #00f6dc;">AGER</span></p>
+    </footer>
+
+
+
+    <script>
+        // Back to Top Button Script
+        $(document).ready(function () {
+            $(window).scroll(function () {
+                if ($(this).scrollTop() > 50) {
+                    $('#back-to-top').fadeIn();
+                } else {
+                    $('#back-to-top').fadeOut();
+                }
+            });
+
+            $('#back-to-top').click(function () {
+                $('html, body').animate({ scrollTop: 0 }, 300);
+                return false;
+            });
+        });
+    </script>
+
+
+    <script>
+        const phrases = ["Crop Recommendation Dashboard", "Crop Recommendation Dashboard"];
+        const typewriterContainer = document.getElementById('typewriter-container');
+        let currentPhraseIndex = 0;
+
+        function typeText() {
+            const currentPhrase = phrases[currentPhraseIndex];
+
+            for (let i = 0; i < currentPhrase.length; i++) {
+                setTimeout(() => {
+                    typewriterContainer.textContent += currentPhrase[i];
+                }, i * 59); // Adjust the typing speed by changing the delay (100ms in this case)
+            }
+
+            // Move to the next phrase after typing is complete
+            setTimeout(() => {
+                eraseText();
+            }, currentPhrase.length * 100 + 42); // Adjust the delay between phrases (1000ms in this case)
+        }
+
+        function eraseText() {
+            const currentPhrase = phrases[currentPhraseIndex];
+
+            for (let i = currentPhrase.length; i > 0; i--) {
+                setTimeout(() => {
+                    typewriterContainer.textContent = currentPhrase.substring(0, i - 1);
+                }, (currentPhrase.length - i) * 40); // Adjust the erasing speed by changing the delay (50ms in this case)
+            }
+
+            // Move to the next phrase after erasing is complete
+            setTimeout(() => {
+                currentPhraseIndex = (currentPhraseIndex + 1) % phrases.length;
+                typeText();
+            }, currentPhrase.length * 50 + 100); // Adjust the delay between phrases (500ms in this case)
+        }
+
+        typeText();
+
+
+
+
+    </script>
+    <!-- mixitup -->
+
+
+
+
+</body>
+
+</html>
